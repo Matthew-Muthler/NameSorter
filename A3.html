@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>A3 CS 155 - Matthew Muthler</title>
+     </head>
+     <body>
+     <script>
+     /****
+        Author: Matthew Muthler
+        Goal: Create and use two functions. Take arbitrary input, modify and report.
+        Status: Yes, this satisfies the specs.        
+        ****/
+      var namesArr = [];
+
+      function getInput(sentinel) {
+
+        while(true) {
+            var input = prompt("Enter a name or -1 to finish: ");
+            
+            if(input == sentinel) {
+                break;
+            }
+            else {
+                namesArr.push(input.toUpperCase());
+            }
+         }
+         printReport();
+      }
+      function printReport() {
+          
+          namesArr.sort();
+          var arrLen = namesArr.length
+
+          document.write(arrLen + " Names Sorted and Uppercase<br>")
+
+          for(var i = 0; i<arrLen; i++) {
+          
+              document.write(namesArr[i] + "<br>")
+          
+          }
+      }
+
+      getInput(-1);
+      
+      </script>
+      </body>
+</html>
